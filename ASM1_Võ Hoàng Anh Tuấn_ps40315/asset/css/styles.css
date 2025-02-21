@@ -1,0 +1,265 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+  a {
+    text-decoration: none;
+    color: #00b300;
+  }
+  
+  header {
+    background-color: silver;
+    color: black;
+    padding: 15px 20px;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .inputbox i {
+    position: absolute;
+    right: 8px;
+    color: black;
+    font-size: 1.2rem;
+    top: 20px;
+}
+  
+
+  .nav-links {
+  
+    list-style: none;
+    display: flex;
+    gap: 45px;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    font-weight: 550;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.5s;
+}
+.nav-links a:hover {
+    color: #f9a825;
+}
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: white;
+  }
+  
+  .nav input {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+  }
+  
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .login-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #00b300;
+    cursor: pointer;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-color: transparent transparent #00b300 transparent ;
+    border: bottom style 2px; 
+  }
+
+  .form-login__group-action {
+    position: relative;
+  }
+  .form-login__email-text {
+      position: absolute;
+      top: 0px;
+      left: 12px;
+      font-size: 13px;
+      color: #2d7b2d;
+      transition: transform 0.5s;
+  
+  }
+  .form-login__group-action input:focus ~ .form-login__email-text {
+    transform: translateY(-20px);
+}
+  .form-login__action {
+    display: none;
+  }
+  .forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #00b300;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #008a00;
+  }
+  
+  p {
+    margin-top: 20px;
+    font-size: 14px;
+  }.product-news {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.product-news h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #2c2c2c;
+}
+
+.product-news .news-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-news .news-item {
+    background-color: #fff;
+    padding-top: 50px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s , box-shadow 0.4s;
+    text-align: left;
+}
+
+.product-news .news-item:hover {
+    transform: translateY(-10%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.product-news .news-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-news .news-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.product-news .news-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f9a825;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product-news .news-item a:hover {
+    color: #d68910;
+}
+
+.news-item img {
+    border-radius: 10px;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    padding-bottom: 20px;
+}
+/* Product News Section Styling */
+
+.product-news .news-item {
+    background-color: #fff;
+    padding: 15px; 
+    border-radius: 8px;
+    width: 20%;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    margin-top: 40px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .footer-section {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+    }
+  }
+  
+  

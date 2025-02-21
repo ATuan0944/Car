@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./asset/css/reset.css" />
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/showproducts.css" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header fixed">
+      <section class="main-content">
+        <section class="header-main">
+          <article class="header-logo">
+            <a href="#"><img src="./asset/img/logo.svg" alt="logo-website" /></a>
+          </article>
+          <nav class="header-nav">
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="#About">Sản phẩm</a></li>
+              <li><a href="#Blog">Liên hệ</a></li>
+              <li><a href="cart.html">Giỏ Hàng</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </header>
+
+    <!-- Product Details Section -->
+    <main class="product-detail" id="product-detail">
+      <div class="product-image">
+        <img src="./asset/img/anh3.jpg" alt="Product Image" id="product-img" />
+      </div>
+      <div class="product-info">
+        <h2 id="product-name">Lexus 11</h2>
+        <p class="price" id="product-price">$8.00</p>
+        <p class="description" id="product-description">
+          Lexus đi đầu trong việc ứng dụng công nghệ hybrid vào các dòng xe sang, với sự ra mắt của mẫu RX 400h - chiếc SUV hybrid hạng sang đầu tiên trên thế giới vào năm 2005.
+        </p>
+        <button onclick="addToCart()">Mua Ngay</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; Cửa Hàng Modulars hân hạnh phục vụ quý khách</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="./asset/jvs/style.js"></script>
+  </body>
+</html>

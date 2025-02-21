@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./asset/css/reset.css" />
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/style.css" />
+
+ 
+    <title>Product</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header fixed">
+      <section class="main-content">
+        <section class="header-main">
+          <!-- Logo -->
+          <article class="header-logo">
+            <a href="#"
+              ><img src="./asset/img/logo.svg" alt="logo-website"
+            /></a>
+          </article>
+          <!-- Navigation -->
+          <nav class="header-nav">
+            <ul>
+              <li>
+                <a href="index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a href="#About">Sản Phẩm</a>
+              </li>
+              <li>
+                <a href="#Blog">Liên Hệ</a>
+              </li>
+              <li>
+                <a href="cart.html">Giỏ Hàng</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Button -->
+          <div class="action">
+            <a href="dangnhap.html" class="btn">Đăng nhập</a>
+          </div>
+        </section>
+        <div class="active-light"></div>
+      </section>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <figure class="banner">
+        <img src="./asset/img/banner-car4-1.jpg" alt="" />
+      </figure>
+    </section>
+
+    <!-- Product Section -->
+    <section class="products" id="products">
+      <h2>Sản Phẩm</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="./asset/img/Vinfast.jpg" alt="Product 1" />
+          <h3>Lexus 11</h3>
+          <p>$3.50</p>
+          <button onclick="window.location.href='product-detail.html?id=0'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/anh3.jpg" alt="Product 2" />
+          <h3>Lexus 22</h3>
+          <p>$4.00</p>
+          <button onclick="window.location.href='product-detail.html?id=1'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/anh2.jpg" alt="Product 3" />
+          <h3>Lexus 33</h3>
+          <p>$4.50</p>
+          <button onclick="window.location.href='product-detail.html?id=2'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/anh4.jpg" alt="Product 4" />
+          <h3>Lexus 44</h3>
+          <p>$9.00</p>
+          <button onclick="window.location.href='product-detail.html?id=3'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/Vinfast1_vf8.jpg" alt="Product 5" />
+          <h3>Vinfast1_vf8</h3>
+          <p>$9.00</p>
+          <button onclick="window.location.href='product-detail.html?id=4'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/Vinfast1_vf8.jpg" alt="Product 5" />
+          <h3>Vinfast1_vf8</h3>
+          <p>$9.00</p>
+          <button onclick="window.location.href='product-detail.html?id=4'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/Vinfast1_vf7.jpg" alt="Product 5" />
+          <h3>Vinfast1_vf8</h3>
+          <p>$9.00</p>
+          <button onclick="window.location.href='product-detail.html?id=4'">
+            Xem Ngay
+          </button>
+        </div>
+        <div class="product">
+          <img src="./asset/img/anh4.jpg" alt="Product 5" />
+          <h3>Vinfast1_vf8</h3>
+          <p>$9.00</p>
+          <button onclick="window.location.href='product-detail.html?id=4'">
+            Xem Ngay
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    font-size: 1em;
+    
+    bottom: 0;
+    right: 0;
+    left: 0;">
+      <p>&copy; Cửa Hàng Modulars hân hạnh phục vụ quý khách</p>
+    </footer>
+
+    <script>
+      function addToCart() {
+        alert("Product added to cart!");
+      }
+
+      function shopNow() {
+        window.location.href = "#products";
+      }
+      // Function to load cart and display products
+      function loadCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceContainer = document.getElementById("total-amount");
+
+        cartItemsContainer.innerHTML = "";
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+          const itemElement = document.createElement("div");
+          itemElement.classList.add("cart-item");
+          itemElement.innerHTML = `
+            <div class="cart-item-details">
+              <img src="${item.img}" alt="${item.name}" />
+              <h4>${item.name}</h4>
+              <p>Giá: ${item.price}</p>
+              <p>Số Lượng: ${item.quantity}</p>
+            </div>
+          `;
+          cartItemsContainer.appendChild(itemElement);
+
+          totalPrice += parseFloat(item.price.slice(1)) * item.quantity;
+        });
+
+        totalPriceContainer.innerText = `$${totalPrice.toFixed(2)}`;
+      }
+
+      // Load cart when the page is loaded
+      window.onload = loadCart;
+
+      // Checkout function
+      document.getElementById("checkout-button").onclick = () => {
+        alert("Thanh toán thành công!");
+        localStorage.removeItem("cart"); // Clear the cart after checkout
+        loadCart(); // Refresh cart display
+      };
+    </script>
+  </body>
+</html>

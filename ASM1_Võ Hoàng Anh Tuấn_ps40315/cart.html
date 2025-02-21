@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./asset/css/reset.css" />
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/cart.css" />
+    <title>Giỏ Hàng</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header fixed">
+      <section class="main-content">
+        <section class="header-main">
+          <article class="header-logo">
+            <a href="#"><img src="./asset/img/logo.svg" alt="logo-website" /></a>
+          </article>
+          <nav class="header-nav">
+            <ul>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="products.html">Sản phẩm</a></li>
+              <li><a href="#Blog">Liên hệ</a></li>
+              <li><a href="dangnhap.html">Tài khoản</a></li>
+            </ul>
+          </nav>
+        </section>
+      </section>
+    </header>
+
+    <!-- Cart Section -->
+    <main class="cart">
+      <h2>Giỏ Hàng</h2>
+      <div id="cart-items"></div>
+      <div id="total-price">
+        <h3>Tổng Tiền: <span id="total-amount">$0.00</span></h3>
+      </div>
+      <button id="checkout-button">Thanh Toán</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; Cửa Hàng Modulars hân hạnh phục vụ quý khách</p>
+    </footer>
+
+    <script>
+      // Function to load cart and display products
+      function loadCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceContainer = document.getElementById("total-amount");
+
+        cartItemsContainer.innerHTML = "";
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+          const itemElement = document.createElement("div");
+          itemElement.classList.add("cart-item");
+          itemElement.innerHTML = `
+            <div class="cart-item-details">
+              <img src="${item.img}" alt="${item.name}" />
+              <h4>${item.name}</h4>
+              <p>Giá: ${item.price}</p>
+              <p>Số Lượng: ${item.quantity}</p>
+            </div>
+          `;
+          cartItemsContainer.appendChild(itemElement);
+
+          totalPrice += parseFloat(item.price.slice(1)) * item.quantity;
+        });
+
+        totalPriceContainer.innerText = `$${totalPrice.toFixed(2)}`;
+      }
+
+      // Load cart when the page is loaded
+      window.onload = loadCart;
+
+      // Checkout function
+      document.getElementById("checkout-button").onclick = () => {
+        alert("Thanh toán thành công!");
+        localStorage.removeItem("cart"); // Clear the cart after checkout
+        loadCart(); // Refresh cart display
+      };
+    </script>
+  </body>
+</html>

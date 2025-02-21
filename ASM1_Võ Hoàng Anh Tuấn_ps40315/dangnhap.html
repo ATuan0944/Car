@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./asset/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="#">Hotline trực tuyến</a>
+        <a href="#">Shope</a>
+        <a href="#">Tiktok</a>
+        <a href="#">instagram</a>
+
+      </nav>
+    </header>
+
+
+        <main class="main">
+          <div class="login-form">
+            <div class="form-header">
+              <h2 class="login__text">Đăng Nhập</h2>
+              <button class="close-btn">X</button>
+            </div>
+            <form class="form-login">
+              <div class="form-login__group-action">
+                <input class="form-login__email" type="email" id="email" />
+                <label class="form-login__email-text" for="email">Email</label>
+              </div>
+
+              <div class="form-login__group-action">
+                <input
+                  class="form-login__email"
+                  type="password"
+                  id="Mật Khẩu"
+                />
+                <label class="form-login__email-text" for="email"
+                  >Mật khẩu</label
+                >
+              </div>
+              <div class="form-login__group-action form-login__action">
+                <input class="form-login__email" type="em" id="SDT" />
+                <label class="form-login__email-text" for="email">SDT</label>
+              </div>
+              <a href="#" class="forgot-password">Quên mật khẩu?</a>
+
+              <button type="submit" class="submit-btn login__text">
+                Đăng Nhập
+              </button>
+            </form>
+            <p class="res__action--text">
+              Bạn chưa có tài khoản?
+              <a id="res__action" href="#">Đăng Ký ngay?</a>
+            </p>
+          </div>
+        </main>
+        <section class="product-news" id="product-news">
+          
+        <footer class="footer">
+          <p>&copy; Cửa Hàng Modulars hân hạnh phục vụ quý khách</p>
+        </footer>
+    
+      </nav>
+    </div>
+  </body>
+
+  <script>
+    var check = document.getElementById("res__action");
+    check.addEventListener("click", function () {
+      document.querySelector(".form-login__action").style.display = "block";
+      document.querySelector(".res__action--text").style.display = "none";
+      document.querySelector(".forgot-password").style.display = "none";
+      var arr = document.querySelectorAll(".login__text");
+      arr.forEach(function (val) {
+        val.textContent = "Đăng ký";
+      });
+    });
+
+    var dk = document.querySelector(".submit-btn");
+    dk.addEventListener("click", function (e) {
+      e.preventDefault(); // Ngăn chặn hành vi mặc định
+      if (dk.textContent) {
+        console.log(dk.textContent);
+        location.reload();
+      }
+    });
+  </script>
+</html>
